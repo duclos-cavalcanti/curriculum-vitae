@@ -10,7 +10,7 @@ PWD := $(shell pwd)
 exist-docker-image = $(shell docker image ls | grep ${DOCKER} | tr -s ' ' | cut -f2 -d ' ')
 exist-docker-running = $(shell docker ps -a | grep ${DOCKER} | tr -s ' ' | cut -f2 -d ' ')
 
-all: 
+all: run
 
 .PHONY: help
 help: 
@@ -72,3 +72,7 @@ pdf:
 view:
 	@echo "## Viewing pdf ##"
 	@${VIEWER} project/main.pdf
+
+.PHONY: export
+export:
+	@cp -v project/main.pdf ~/Downloads/CV.pdf

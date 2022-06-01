@@ -13,7 +13,7 @@ exist-docker-running = $(shell docker ps -a | grep ${DOCKER} | tr -s ' ' | cut -
 all: run
 
 .PHONY: help
-help: 
+help:
 	$(info Toolchain version: Latex Template)
 	$(info)
 	$(info Targets: )
@@ -75,4 +75,4 @@ view:
 
 .PHONY: export
 export:
-	@cp -v project/main.pdf ~/Downloads/CV.pdf
+	@cp -v ./project/main.pdf ~/Downloads/CV.pdf

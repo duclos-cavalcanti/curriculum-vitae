@@ -4,6 +4,7 @@ FILE := $(lastword $(MAKEFILE_LIST))
 DOCKER := thomasweise/texlive
 NAME := latex-example
 VIEWER := zathura
+TEMPLATE := awesome
 
 PWD := $(shell pwd)
 
@@ -66,7 +67,7 @@ run: $(if $(call exist-docker-image),,build) run-clean
 .PHONY: pdf
 pdf:
 	@echo "## Creating pdf ##"
-	@cd project && xelatex main.tex
+	@cd ${TEMPLATE} && xelatex main.tex
 
 .PHONY: view
 view:

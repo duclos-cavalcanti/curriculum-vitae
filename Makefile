@@ -76,4 +76,4 @@ view:
 
 .PHONY: export
 export:
-	@cp -v ./project/main.pdf ~/Downloads/CV.pdf
+	@cp -v ./${TEMPLATE}/main.pdf ~/Downloads/CV.pdf

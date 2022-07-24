@@ -77,3 +77,7 @@ view:
 .PHONY: export
 export:
 	@cp -v ./${TEMPLATE}/main.pdf ~/Downloads/CV.pdf
+
+.PHONY: switch
+switch:
+	@cp -v ./${TEMPLATE}/main.pdf ~/Documents/projects/personal/duclos-cavalcanti.github.io/assets/pdf/CV.pdf

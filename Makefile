@@ -11,7 +11,7 @@ PWD := $(shell pwd)
 exist-docker-image = $(shell docker image ls | grep ${DOCKER} | tr -s ' ' | cut -f2 -d ' ')
 exist-docker-running = $(shell docker ps -a | grep ${DOCKER} | tr -s ' ' | cut -f2 -d ' ')
 
-all: run
+all: run export
 
 .PHONY: help
 help:
@@ -78,6 +78,6 @@ view:
 export:
 	@cp -v ./${TEMPLATE}/main.pdf ~/Downloads/CV.pdf
 
-.PHONY: switch
-switch:
+.PHONY: update
+update:
 	@cp -v ./${TEMPLATE}/main.pdf ~/Documents/projects/personal/duclos-cavalcanti.github.io/assets/pdf/CV.pdf
